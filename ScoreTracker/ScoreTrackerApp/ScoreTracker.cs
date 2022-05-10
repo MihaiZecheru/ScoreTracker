@@ -65,9 +65,10 @@ namespace ScoreTrackerApp
             DialogResult user_choice = DialogResult.Cancel;
             do
             {
-                if (this.chris_textbox.Text == "") return;
-
-                int amount = int.Parse(this.chris_textbox.Text);
+                int amount;
+                if (this.chris_textbox.Text == "") amount = 1;
+                else
+                    amount = int.Parse(this.chris_textbox.Text);
 
                 if (amount == 0) return; // will have no effect
 
@@ -88,7 +89,8 @@ namespace ScoreTrackerApp
             } while (user_choice == DialogResult.Retry);
 
             this.chris_textbox.Text = "";
-            this.ActiveControl = this.chris_textbox;
+            if (this.chris_textbox.Text != "")
+                this.ActiveControl = this.chris_textbox;
         }
 
         private async void daria_add_Click(object sender, EventArgs e)
@@ -96,9 +98,10 @@ namespace ScoreTrackerApp
             DialogResult user_choice = DialogResult.Cancel;
             do
             {
-                if (this.daria_textbox.Text == "") return;
-
-                int amount = int.Parse(this.daria_textbox.Text);
+                int amount;
+                if (this.daria_textbox.Text == "") amount = 1;
+                else
+                    amount = int.Parse(this.daria_textbox.Text);
 
                 if (amount == 0) return; // will have no effect
 
@@ -119,7 +122,8 @@ namespace ScoreTrackerApp
             } while (user_choice == DialogResult.Retry);
 
             this.daria_textbox.Text = "";
-            this.ActiveControl = this.daria_textbox;
+            if (this.daria_textbox.Text != "")
+                this.ActiveControl = this.daria_textbox;
         }
 
         private async void chris_remove_Click(object sender, EventArgs e)
@@ -127,9 +131,10 @@ namespace ScoreTrackerApp
             DialogResult user_choice = DialogResult.Cancel;
             do
             {
-                if (this.chris_textbox.Text == "") return;
-
-                int amount = int.Parse(this.chris_textbox.Text) - (int.Parse(this.chris_textbox.Text) * 2);
+                int amount;
+                if (this.chris_textbox.Text == "") amount = 1;
+                else
+                    amount = int.Parse(this.chris_textbox.Text) - (int.Parse(this.chris_textbox.Text) * 2);
 
                 if (amount == 0) return; // will have no effect
 
@@ -149,7 +154,8 @@ namespace ScoreTrackerApp
             } while (user_choice == DialogResult.Retry);
 
             this.chris_textbox.Text = "";
-            this.ActiveControl = this.chris_textbox;
+            if (this.chris_textbox.Text != "")
+                this.ActiveControl = this.chris_textbox;
 
         }
 
@@ -158,9 +164,10 @@ namespace ScoreTrackerApp
             DialogResult user_choice = DialogResult.Cancel;
             do
             {
-                if (this.daria_textbox.Text == "") return;
-
-                int amount = int.Parse(this.daria_textbox.Text) - (int.Parse(this.daria_textbox.Text) * 2);
+                int amount;
+                if (this.daria_textbox.Text == "") amount = 1;
+                else
+                    amount = int.Parse(this.daria_textbox.Text) - (int.Parse(this.daria_textbox.Text) * 2);
 
                 if (amount == 0) return; // will have no effect
 
@@ -181,7 +188,8 @@ namespace ScoreTrackerApp
             } while (user_choice == DialogResult.Retry);
 
             this.daria_textbox.Text = "";
-            this.ActiveControl = this.daria_textbox;
+            if (this.daria_textbox.Text != "")
+                this.ActiveControl = this.daria_textbox;
         }
 
         private void chris_check_Click(object sender, EventArgs e)
